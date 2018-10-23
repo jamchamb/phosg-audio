@@ -180,7 +180,7 @@ SplitNoise::SplitNoise(int split_distance, float seconds, float volume,
     int first_x = (x / split_distance) * split_distance;
     int second_x = first_x + split_distance;
     float x1p = (float)(x - first_x) / (second_x - first_x);
-    if (second_x >= this->samples.size()) {
+    if (second_x >= (int) this->samples.size()) {
       this->samples[x] = 0;
     } else {
       this->samples[x] = x1p * this->samples[first_x] + (1 - x1p) * this->samples[second_x];

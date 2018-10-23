@@ -1,5 +1,5 @@
 #include "Constants.hh"
-
+#include <math.h>
 
 
 class Sound {

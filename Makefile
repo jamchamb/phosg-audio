@@ -13,20 +13,20 @@ else
 	LDFLAGS += -L/opt/local/lib -pthread
 endif
 
-all: libphosg-audio.a audiocat
+all: libphosg-audio.a
 
 install: libphosg-audio.a
 	mkdir -p $(INSTALL_DIR)/include/phosg-audio
 	cp libphosg-audio.a $(INSTALL_DIR)/lib/
 	cp -r *.hh $(INSTALL_DIR)/include/phosg-audio/
-	cp audiocat $(INSTALL_DIR)/bin/
+#	cp audiocat $(INSTALL_DIR)/bin/
 
 libphosg-audio.a: $(OBJECTS)
 	rm -f libphosg-audio.a
 	ar rcs libphosg-audio.a $(OBJECTS)
 
 audiocat: $(OBJECTS) Audiocat.o
-	$(CXX) $(LDFLAGS) -lphosg -framework OpenAL $^ -o $@
+	$(CXX) $(LDFLAGS) -lphosg -lopenal $^ -o $@
 
 clean:
 	rm -rf *.dSYM *.o gmon.out libphosg-audio.a audiocat

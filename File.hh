@@ -2,6 +2,8 @@
 #include <stddef.h>
 
 #include <vector>
+#include <stdio.h>
+#include <string.h>
 
 
 struct WAVContents {

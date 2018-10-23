@@ -6,6 +6,10 @@
 #include <AL/alc.h>
 #endif
 
+#include <cstddef>
+#include <cstring>
+#include <ctype.h>
+#include <stdexcept>
 #include <stdint.h>
 #include <sys/types.h>
 
